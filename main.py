@@ -14,7 +14,7 @@ bot = telebot.TeleBot(TELEGRAM_TOKEN)
 # ответ на команду /start
 @bot.message_handler(commands=["start"])
 def cmd_start(message):
-    bot.reply_to(message, "Ну и зачем ты это запускаешь???")
+    bot.reply_to(message, "Бот запущен")
 
 @bot.message_handler(content_types=["text"])
 def bot_msg_text(message):
