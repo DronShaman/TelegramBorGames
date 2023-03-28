@@ -18,18 +18,10 @@ bot = telebot.TeleBot(TELEGRAM_TOKEN)
 def cmd_start(message):
     bot.reply_to(message, "Ну и зачем ты команды запускаешь???")
 
-# кусок кода из документации
-def shout(text):
-    return text.upper()
-print(shout('Hello'))
-yell = shout
-print(yell('Hello'))
-
 if __name__ == '__main__':
     print("Оно живое!!!")
     bot.infinity_polling()
     print("Конец")
-
 
 @bot.message_handler(commands=["text"])
 def bot_msg_text(message):
