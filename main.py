@@ -21,7 +21,7 @@ def cmd_start(message):
 @bot.message_handler(commands=["text"])
 def bot_msg_text(message):
     if message.text.startswith("/"):
-        bot.send_message(message, "Команда не доступна")
+        bot.send_message(message.chat.id, "Команда не доступна")
     else:
         bot.send_message(message.chat.id, "Это не команда")
 
