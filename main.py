@@ -20,10 +20,8 @@ def cmd_start(message):
 def bot_msg_text(message):
     if message.text.startswith("/"):
         bot.send_message(message.chat.id, "Меня не взломать, фед бессмертный")
-    elif message.text.startswith("Привет"):
-        bot.send_message(message.chat.id, "Здорово, заебал")
     else:
-        bot.send_message(message.chat.id, "Что ты тут пишешь?")
+        bot.send_message(message.chat.id, "Не знаю такой команды")
 
 if __name__ == '__main__':
     print("Оно живое!")
