@@ -18,14 +18,16 @@ bot = telebot.TeleBot(TELEGRAM_TOKEN)
 def cmd_start(message):
     bot.reply_to(message, "Ну и зачем ты команды запускаешь???")
 
+@bot.message_handler(commands=["text"])
+def bot_msg_text(message):
+    if message.text.startswith("/"):
+        bot.send_message(message, "Команда не доступна")
+    else:
+        bot.send_message(message.chat.id, "Это не команда")
+
 if __name__ == '__main__':
     print("Оно живое!!!")
     bot.infinity_polling()
     print("Конец")
 
-@bot.message_handler(commands=["text"])
-def bot_msg_text(message):
-    if message.text.startswith("/"):
-        bot.send_message(message.chat.id, "Команда не доступна")
-    else:
-        bot.send_message(message.chat.id, "Это не команда")
+
