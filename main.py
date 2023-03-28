@@ -14,14 +14,16 @@ bot = telebot.TeleBot(TELEGRAM_TOKEN)
 # ответ на команду /start
 @bot.message_handler(commands=["start"])
 def cmd_start(message):
-    bot.reply_to(message, "Бот запущен")
+    bot.reply_to(message, "Фед Быстрый интернет запущен")
 
 @bot.message_handler(content_types=["text"])
 def bot_msg_text(message):
     if message.text.startswith("/"):
-        bot.send_message(message.chat.id, "Команда не доступна")
+        bot.send_message(message.chat.id, "Меня не взломать, фед бессмертный")
+    elif message.text.startswith("Привет"):
+        bot.send_message(message.chat.id, "Здорово, заебал")
     else:
-        bot.send_message(message.chat.id, "Это не команда")
+        bot.send_message(message.chat.id, "Что ты тут пишешь?")
 
 if __name__ == '__main__':
     print("Оно живое!")
