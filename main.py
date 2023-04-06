@@ -37,6 +37,7 @@ if __name__ == '__main__':
 # Задаем токен бота и ID чата, куда будут отправляться оповещения
 chat_id = "https://t.me/dronshaman"
 
+
 # Задаем URL для получения информации о стриме на Trovo
 stream_url = "https://trovo.live/s/DronShaman"
 
